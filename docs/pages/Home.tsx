@@ -17,13 +17,13 @@ export function HomePage() {
 
       <section className="section">
         <Heading level="h2">Install</Heading>
-        <CodeBlock>{`npm install @wonder-ui/react`}</CodeBlock>
+        <CodeBlock>{`npm install @luckyluu/wonder-ui`}</CodeBlock>
       </section>
 
       <section className="section">
         <Heading level="h2">Quick Start</Heading>
-        <CodeBlock>{`import { Button, Card, Heading } from '@wonder-ui/react';
-import '@wonder-ui/react/styles.css';
+        <CodeBlock>{`import { Button, Card, Heading } from '@luckyluu/wonder-ui';
+import '@luckyluu/wonder-ui/styles.css';
 
 function App() {
   return (

@@ -7,14 +7,14 @@ Soft pastel colors, chunky 3D buttons, large friendly typography, and big tap ta
 ## Install
 
 ```bash
-npm install @wonder-ui/react
+npm install @luckyluu/wonder-ui
 ```
 
 ## Quick Start
 
 ```tsx
-import { Button, Card, Heading } from '@wonder-ui/react';
-import '@wonder-ui/react/styles.css';
+import { Button, Card, Heading } from '@luckyluu/wonder-ui';
+import '@luckyluu/wonder-ui/styles.css';
 
 function App() {
   return (
@@ -80,8 +80,8 @@ Releases are automated via GitHub Actions.
 ### One-time setup
 
 1. **GitHub Pages** — Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**
-2. **npm token** — Create an npm **Automation** token with publish access to `@wonder-ui`, then add it as a repo secret named `NPM_TOKEN`
-3. **First publish** — If the `@wonder-ui` scope is new on npm, the first publish may need to be done once manually from an account with org access
+2. **npm token** — Create an npm **Automation** token for the `luckyluu` account, then add it as a repo secret named `NPM_TOKEN`
+3. **First publish** — The first publish may need to be done once manually while logged in as `luckyluu`
 
 ### Release flow
 
