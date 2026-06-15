@@ -22,7 +22,16 @@
     "build": "tsc -p tsconfig.lib.json --noEmit && vite build",
     "build:docs": "tsc --noEmit && vite build --config vite.docs.config.ts",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview --config vite.docs.config.ts"
+    "preview": "vite preview --config vite.docs.config.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luubinhan/wonder-ui.git"
+  },
+  "homepage": "https://luubinhan.github.io/wonder-ui/",
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "react": "^18 || ^19",

@@ -67,7 +67,34 @@ npm run build:docs # build docs → docs-dist/
 npm run typecheck  # TypeScript check
 ```
 
-## Publishing to npm
+## Documentation
+
+Live docs: [luubinhan.github.io/wonder-ui](https://luubinhan.github.io/wonder-ui/)
+
+Pushes to `main` automatically build and deploy the docs site to GitHub Pages.
+
+## Publishing
+
+Releases are automated via GitHub Actions.
+
+### One-time setup
+
+1. **GitHub Pages** — Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. **npm token** — Create an npm **Automation** token with publish access to `@wonder-ui`, then add it as a repo secret named `NPM_TOKEN`
+3. **First publish** — If the `@wonder-ui` scope is new on npm, the first publish may need to be done once manually from an account with org access
+
+### Release flow
+
+```bash
+# 1. Bump version in package.json
+# 2. Commit and push to main (docs auto-deploy)
+git tag v0.2.0
+git push origin v0.2.0   # triggers npm publish
+```
+
+The tag must match the version in `package.json` (e.g. tag `v0.2.0` for version `0.2.0`).
+
+### Manual publish (fallback)
 
 ```bash
 npm run build
