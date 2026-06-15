@@ -67,16 +67,6 @@ npm run build:docs # build docs → docs-dist/
 npm run typecheck  # TypeScript check
 ```
 
-## GitHub Pages
-
-The docs site deploys automatically on push to `main`.
-
-**One-time setup:**
-
-1. Go to **Settings → Pages** in your GitHub repo
-2. Set **Source** to **GitHub Actions**
-3. Push to `main` — the workflow builds and deploys to `https://<user>.github.io/wonder-ui/`
-
 ## Publishing to npm
 
 ```bash
