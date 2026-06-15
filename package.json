@@ -1,6 +1,6 @@
 {
   "name": "@wonder-ui/react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A playful, kid-friendly React design system",
   "type": "module",
   "main": "./dist/index.cjs",
