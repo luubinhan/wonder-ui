@@ -1,0 +1,18 @@
+.text {
+  font-family: var(--wonder-font-family);
+  font-size: var(--wonder-font-size-md);
+  line-height: var(--wonder-line-height-normal);
+  color: var(--wonder-color-text);
+}
+
+.muted {
+  color: var(--wonder-color-text-muted);
+}
+
+.sm {
+  font-size: var(--wonder-font-size-sm);
+}
+
+.lg {
+  font-size: var(--wonder-font-size-lg);
+}

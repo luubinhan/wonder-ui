@@ -1,0 +1,88 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wonder-space-3);
+  min-height: var(--wonder-tap-target);
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapperDisabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--wonder-color-border);
+  border-radius: var(--wonder-radius-sm);
+  background: linear-gradient(180deg, #ffffff 0%, var(--wonder-color-bg) 100%);
+  box-shadow: 0 var(--wonder-depth-sm) 0 var(--wonder-color-border);
+  transition:
+    border-color var(--wonder-transition-fast),
+    background var(--wonder-transition-fast),
+    transform var(--wonder-transition-press),
+    box-shadow var(--wonder-transition-press);
+}
+
+.wrapper:hover:not(.wrapperDisabled) .box {
+  border-color: var(--wonder-color-primary);
+}
+
+.wrapper:active:not(.wrapperDisabled) .box {
+  transform: translateY(var(--wonder-depth-sm));
+  box-shadow: none;
+}
+
+.input:focus-visible + .box {
+  outline: 3px solid rgba(91, 159, 227, 0.3);
+  outline-offset: 2px;
+}
+
+.input:checked + .box {
+  background: linear-gradient(180deg, #6eb0eb 0%, var(--wonder-color-primary) 100%);
+  border-color: var(--wonder-color-primary);
+  box-shadow: var(--wonder-shadow-3d-primary);
+}
+
+.wrapper:active:not(.wrapperDisabled) .input:checked + .box {
+  transform: translateY(var(--wonder-depth-md));
+  box-shadow: none;
+}
+
+.checkmark {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition:
+    opacity var(--wonder-transition-fast),
+    transform var(--wonder-transition-fast);
+}
+
+.input:checked + .box .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.label {
+  font-size: var(--wonder-font-size-md);
+  font-weight: var(--wonder-font-weight-medium);
+  color: var(--wonder-color-text);
+}

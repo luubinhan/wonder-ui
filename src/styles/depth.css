@@ -1,0 +1,8 @@
+/*
+ * Shared 3D press pattern for interactive components.
+ *
+ * Resting:  bottom depth via box-shadow (no blur)
+ * Hover:    translateY(-1px), deepen shadow by 1px
+ * Active:   translateY(depth), shadow collapses to 0 (pressed)
+ * Disabled: flatten depth, reduce opacity
+ */

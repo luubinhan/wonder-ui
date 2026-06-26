@@ -1,0 +1,67 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wonder-space-1);
+  width: 100%;
+}
+
+.valueLabel {
+  font-family: var(--wonder-font-family);
+  font-size: var(--wonder-font-size-xs);
+  font-weight: var(--wonder-font-weight-medium);
+  line-height: var(--wonder-line-height-tight);
+  color: var(--wonder-color-text-muted);
+  text-align: right;
+}
+
+.track {
+  width: 100%;
+  overflow: hidden;
+  background: var(--wonder-color-border);
+  border-radius: var(--wonder-radius-full);
+}
+
+.fill {
+  height: 100%;
+  border-radius: var(--wonder-radius-full);
+  transition: width var(--wonder-transition-fast);
+}
+
+.sm .track {
+  height: 8px;
+}
+
+.md .track {
+  height: 12px;
+}
+
+.lg .track {
+  height: 16px;
+}
+
+.primary {
+  background: var(--wonder-color-primary);
+}
+
+.secondary {
+  background: var(--wonder-color-secondary);
+}
+
+.accent {
+  background: var(--wonder-color-accent);
+}
+
+.indeterminate .fill {
+  width: 40%;
+  animation: indeterminate 1.4s ease-in-out infinite;
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(350%);
+  }
+}

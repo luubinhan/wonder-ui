@@ -1,0 +1,119 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--wonder-z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--wonder-space-4);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background-color: rgba(44, 62, 80, 0.4);
+  cursor: pointer;
+  animation: modalBackdropIn var(--wonder-transition-normal) both;
+}
+
+.dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-height: min(90vh, 720px);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--wonder-color-surface);
+  border-radius: var(--wonder-radius-xl);
+  box-shadow: var(--wonder-shadow-lg);
+  overflow: hidden;
+  animation: modalDialogIn var(--wonder-transition-normal) both;
+}
+
+.sm {
+  max-width: 360px;
+}
+
+.md {
+  max-width: 480px;
+}
+
+.lg {
+  max-width: 640px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wonder-space-3);
+  padding: var(--wonder-space-4) var(--wonder-space-5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--wonder-font-size-lg);
+  font-weight: var(--wonder-font-weight-bold);
+  color: var(--wonder-color-text);
+  line-height: var(--wonder-line-height-tight);
+}
+
+.closeButton {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--wonder-tap-target);
+  height: var(--wonder-tap-target);
+  border: none;
+  border-radius: var(--wonder-radius-full);
+  background: transparent;
+  color: var(--wonder-color-text-muted);
+  font-size: var(--wonder-font-size-xl);
+  line-height: 1;
+  transition: background-color var(--wonder-transition-fast);
+}
+
+.closeButton:hover {
+  background-color: var(--wonder-color-ghost-hover);
+  color: var(--wonder-color-text);
+}
+
+.body {
+  padding: var(--wonder-space-5);
+  overflow-y: auto;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--wonder-space-3);
+  padding: var(--wonder-space-4) var(--wonder-space-5);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes modalBackdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalDialogIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

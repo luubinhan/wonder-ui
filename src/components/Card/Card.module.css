@@ -1,0 +1,43 @@
+.card {
+  border-radius: var(--wonder-radius-xl);
+  box-shadow: var(--wonder-shadow-soft);
+  overflow: hidden;
+}
+
+.default {
+  background-color: var(--wonder-color-surface);
+}
+
+.sky {
+  background-color: var(--wonder-color-sky);
+}
+
+.butter {
+  background-color: var(--wonder-color-butter);
+}
+
+.blush {
+  background-color: var(--wonder-color-blush);
+}
+
+.mint {
+  background-color: var(--wonder-color-mint);
+}
+
+.header {
+  padding: var(--wonder-space-4) var(--wonder-space-5);
+  font-size: var(--wonder-font-size-lg);
+  font-weight: var(--wonder-font-weight-bold);
+  color: var(--wonder-color-text);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.body {
+  padding: var(--wonder-space-5);
+}
+
+.footer {
+  padding: var(--wonder-space-4) var(--wonder-space-5);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.4);
+}

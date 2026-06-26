@@ -1,0 +1,90 @@
+---
+description: Wonder UI component structure, React patterns, and CSS styling conventions
+globs: src/components/**/*.{tsx,css}
+alwaysApply: false
+---
+
+# Wonder UI Component & Styling Patterns
+
+## File structure
+
+Each component lives in `src/components/ComponentName/`:
+
+- `ComponentName.tsx` — component + exported props types
+- `ComponentName.module.css` — scoped styles
+- `index.ts` — barrel re-export of component and types
+
+Register new components in `src/index.ts`.
+
+## React conventions
+
+- Named function exports: `export function Button(...)`.
+- Export props as `ComponentNameProps`; export variant unions separately when reused (`CardVariant`, `AlertVariant`).
+- Extend native HTML attributes when wrapping a DOM element:
+
+```tsx
+export type ButtonProps = {
+  variant?: 'primary' | 'secondary';
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+```
+
+- Set defaults in destructuring (`variant = 'primary'`).
+- Always accept and merge `className` via the local `cx` helper (defined per file, not shared).
+- Spread `...props` onto the underlying native element last.
+- Use `useId()` for form controls; wire `label`/`htmlFor`, `aria-invalid`, `aria-describedby`, and `role="alert"` for errors.
+
+## Class composition
+
+```tsx
+function cx(...classes: (string | undefined | false)[]) {
+  return classes.filter(Boolean).join(' ');
+}
+
+className={cx(styles.base, styles[variant], condition && styles.modifier, className)}
+```
+
+Map variant/size props directly to CSS module class names (`styles[variant]`, `styles[size]`).
+
+## CSS modules & design tokens
+
+- Import styles: `import styles from './ComponentName.module.css'`.
+- Use `--wonder-*` tokens from `src/styles/tokens.css` — never hardcode colors, spacing, radii, or motion values.
+- Base class for layout, separate classes for variants/sizes/states.
+- CamelCase class names in CSS modules (`.inputError`, `.wrapperDisabled`).
+
+### Token categories
+
+| Category | Examples |
+|----------|----------|
+| Color | `--wonder-color-primary`, `--wonder-color-text-muted`, `--wonder-color-surface` |
+| Spacing | `--wonder-space-1` … `--wonder-space-6` |
+| Typography | `--wonder-font-size-*`, `--wonder-font-weight-*`, `--wonder-font-family` |
+| Shape | `--wonder-radius-sm` … `--wonder-radius-full` |
+| Shadow | `--wonder-shadow-soft`, `--wonder-shadow-inset`, `--wonder-shadow-3d-*` |
+| Motion | `--wonder-transition-fast`, `--wonder-transition-press` |
+| A11y | `--wonder-tap-target` (48px min interactive height) |
+
+### Interactive 3D press (buttons, toggles)
+
+Follow the pattern in `src/styles/depth.css`:
+
+- Rest: bottom depth via `box-shadow` (no blur)
+- Hover: `translateY(-1px)`, deepen shadow
+- Active: `translateY(var(--wonder-depth-md))`, collapse shadow
+- Disabled: `opacity: 0.55`, `cursor: not-allowed`, flatten depth
+
+Ghost/non-3D variants skip the shadow press; use `scale(0.98)` on active instead.
+
+### Common style rules
+
+- Border radius: `--wonder-radius-lg` for inputs, `--wonder-radius-xl` for cards, `--wonder-radius-full` for pills/buttons.
+- Focus rings: `outline: none` + colored `box-shadow` ring using token color at ~20% opacity.
+- Disabled inputs: `opacity: 0.55`, muted background.
+- Card tints use `--wonder-color-sky`, `--wonder-color-butter`, `--wonder-color-blush`, `--wonder-color-mint`.
+
+## Accessibility checklist
+
+- Decorative icons/spinners: `aria-hidden="true"`.
+- Loading spinner: `role="status"` + `aria-label`.
+- Alerts: `role="alert"`; dismiss button needs `aria-label`.
+- Form errors: `role="alert"` on error text, `aria-invalid` on input.

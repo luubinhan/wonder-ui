@@ -1,0 +1,179 @@
+.bar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wonder-space-1);
+  padding: var(--wonder-space-1) var(--wonder-space-2);
+  border-radius: var(--wonder-radius-full);
+  background-color: var(--wonder-color-border);
+  font-family: var(--wonder-font-family);
+  font-size: var(--wonder-font-size-sm);
+  font-weight: var(--wonder-font-weight-medium);
+  line-height: 1;
+  color: var(--wonder-color-text);
+}
+
+.barDisabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.pageList {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wonder-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pageItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageButton,
+.navButton,
+.ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 var(--wonder-space-1);
+  border: none;
+  border-radius: var(--wonder-radius-sm);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--wonder-transition-fast),
+    color var(--wonder-transition-fast);
+}
+
+.pageButton:hover:not(:disabled),
+.navButton:hover:not(:disabled) {
+  background-color: rgba(44, 62, 80, 0.08);
+}
+
+.pageButton:focus-visible,
+.navButton:focus-visible,
+.goToInput:focus-visible,
+.goToSubmit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(91, 159, 227, 0.2);
+}
+
+.pageButton:disabled,
+.navButton:disabled,
+.goToSubmit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pageButtonActive {
+  background-color: var(--wonder-color-text);
+  color: var(--wonder-color-surface);
+}
+
+.pageButtonActiveCircle {
+  border-radius: 50%;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.pageButtonActiveRounded {
+  border-radius: var(--wonder-radius-sm);
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--wonder-space-2);
+}
+
+.pageButtonActive:hover:not(:disabled) {
+  background-color: var(--wonder-color-text);
+  color: var(--wonder-color-surface);
+}
+
+.ellipsis {
+  cursor: default;
+  user-select: none;
+}
+
+.navButton {
+  padding: 0;
+}
+
+.chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* PaginationGoTo */
+.goTo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wonder-space-2);
+  font-family: var(--wonder-font-family);
+  font-size: var(--wonder-font-size-sm);
+  font-weight: var(--wonder-font-weight-medium);
+  line-height: 1;
+  color: var(--wonder-color-text);
+}
+
+.goToPill {
+  padding: var(--wonder-space-1) var(--wonder-space-2);
+  border-radius: var(--wonder-radius-full);
+  background-color: var(--wonder-color-border);
+}
+
+.goToMinimal {
+  padding: 0;
+  background: transparent;
+}
+
+.goToDisabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.goToLabel {
+  white-space: nowrap;
+}
+
+.goToInput {
+  width: 3.5rem;
+  min-height: 32px;
+  padding: 0 var(--wonder-space-2);
+  border: 1px solid var(--wonder-color-text);
+  border-radius: var(--wonder-radius-sm);
+  background-color: var(--wonder-color-surface);
+  color: var(--wonder-color-text);
+  font: inherit;
+  line-height: 1;
+  text-align: center;
+  transition:
+    border-color var(--wonder-transition-fast),
+    box-shadow var(--wonder-transition-fast);
+}
+
+.goToInput:hover:not(:disabled) {
+  border-color: var(--wonder-color-text);
+}
+
+.goToInput:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.goToSubmit {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}

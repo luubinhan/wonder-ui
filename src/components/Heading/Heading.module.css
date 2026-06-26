@@ -1,0 +1,22 @@
+.heading {
+  font-family: var(--wonder-font-family);
+  font-weight: var(--wonder-font-weight-bold);
+  line-height: var(--wonder-line-height-tight);
+  color: var(--wonder-color-text);
+}
+
+.h1 {
+  font-size: var(--wonder-font-size-2xl);
+}
+
+.h2 {
+  font-size: var(--wonder-font-size-xl);
+}
+
+.h3 {
+  font-size: var(--wonder-font-size-lg);
+}
+
+.h4 {
+  font-size: var(--wonder-font-size-md);
+}

@@ -1,0 +1,104 @@
+.stepper {
+  width: 100%;
+}
+
+.stepList {
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.connector {
+  flex: 1;
+  height: 4px;
+  min-width: var(--wonder-space-2);
+  border-radius: var(--wonder-radius-full);
+}
+
+.connectorCompleted {
+  background-color: var(--wonder-color-success);
+}
+
+.connectorIncomplete {
+  background-color: var(--wonder-color-primary-light);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--wonder-radius-full);
+}
+
+.iconWrapperRing {
+  box-shadow: 0 0 0 3px var(--wonder-color-primary-light);
+}
+
+.iconWrapperRingCompleted {
+  box-shadow: 0 0 0 3px var(--wonder-color-success-light);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--wonder-radius-full);
+}
+
+.completed .icon {
+  background-color: var(--wonder-color-success);
+  color: var(--wonder-color-surface);
+}
+
+.active .icon {
+  background-color: var(--wonder-color-primary);
+  color: var(--wonder-color-surface);
+}
+
+.pending .icon {
+  background-color: var(--wonder-color-primary-light);
+  color: var(--wonder-color-primary);
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+}
+
+.stepIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  margin-top: var(--wonder-space-2);
+  font-size: var(--wonder-font-size-xs);
+  font-weight: var(--wonder-font-weight-medium);
+  color: var(--wonder-color-text);
+  text-align: center;
+  line-height: var(--wonder-line-height-tight);
+}
