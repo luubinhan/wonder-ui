@@ -65,7 +65,7 @@ Import **either** `styles.css` explicitly (recommended for import-order control)
 
 Load Wonder UI CSS **before** your global CSS if your app styles should win; **after** if Wonder UI should win.
 
-### Migrating to 0.3.0
+### Migrating to 0.2.2
 
 Global resets are no longer included in `styles.css` by default. If your app relied on Wonder UI zeroing margins or styling `body`, import `reset.css` explicitly or use your own reset.
 
