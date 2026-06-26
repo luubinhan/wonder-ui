@@ -1,7 +1,19 @@
+import { copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
+
+function copyCssExports(): Plugin {
+  return {
+    name: 'copy-css-exports',
+    closeBundle() {
+      const distDir = resolve(__dirname, 'dist');
+      copyFileSync(resolve(__dirname, 'src/styles/tokens.css'), resolve(distDir, 'tokens.css'));
+      copyFileSync(resolve(__dirname, 'src/styles/reset.css'), resolve(distDir, 'reset.css'));
+    },
+  };
+}
 
 export default defineConfig({
   plugins: [
@@ -11,6 +23,7 @@ export default defineConfig({
       outDir: 'dist',
       rollupTypes: true,
     }),
+    copyCssExports(),
   ],
   build: {
     lib: {

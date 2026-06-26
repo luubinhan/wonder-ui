@@ -36,8 +36,8 @@ export function TokensPage() {
       <Heading level="h1">Design Tokens</Heading>
       <Text variant="muted">
         All design decisions are defined as CSS custom properties in{' '}
-        <code>tokens.css</code>. Override any variable on <code>:root</code> or a
-        parent element to customize the theme.
+        <code>tokens.css</code>. Override any variable on <code>:root</code>, a{' '}
+        <code>.wonder-ui</code> parent, or any ancestor element to customize the theme.
       </Text>
 
       <section className="section">

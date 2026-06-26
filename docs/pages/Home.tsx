@@ -22,15 +22,17 @@ export function HomePage() {
 
       <section className="section">
         <Heading level="h2">Quick Start</Heading>
-        <CodeBlock>{`import { Button, Card, Heading } from '@luckyluu/wonder-ui';
+        <CodeBlock>{`import { WonderUIProvider, Button, Card, Heading } from '@luckyluu/wonder-ui';
 import '@luckyluu/wonder-ui/styles.css';
 
 function App() {
   return (
-    <Card variant="sky" header="Hello!">
-      <Heading level="h2">Welcome to Wonder UI</Heading>
-      <Button variant="primary">Let's Go!</Button>
-    </Card>
+    <WonderUIProvider>
+      <Card variant="sky" header="Hello!">
+        <Heading level="h2">Welcome to Wonder UI</Heading>
+        <Button variant="primary">Let's Go!</Button>
+      </Card>
+    </WonderUIProvider>
   );
 }`}</CodeBlock>
       </section>

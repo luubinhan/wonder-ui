@@ -12,8 +12,29 @@ npm install @luckyluu/wonder-ui
 
 ## Quick Start
 
+**Embedded in an existing app** (recommended — avoids CSS conflicts with your global styles):
+
+```tsx
+import { WonderUIProvider, Button, Card, Heading } from '@luckyluu/wonder-ui';
+import '@luckyluu/wonder-ui/styles.css';
+
+function App() {
+  return (
+    <WonderUIProvider>
+      <Card variant="sky" header="Hello!">
+        <Heading level="h2">Welcome to Wonder UI</Heading>
+        <Button variant="primary">Let's Go!</Button>
+      </Card>
+    </WonderUIProvider>
+  );
+}
+```
+
+**Greenfield app** (full-page Wonder UI look, including base resets):
+
 ```tsx
 import { Button, Card, Heading } from '@luckyluu/wonder-ui';
+import '@luckyluu/wonder-ui/reset.css';
 import '@luckyluu/wonder-ui/styles.css';
 
 function App() {
@@ -31,6 +52,22 @@ function App() {
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 ```
+
+## CSS Imports
+
+| Import | Contents |
+|--------|----------|
+| `@luckyluu/wonder-ui/styles.css` | Design tokens, component styles, and scoped base (`.wonder-ui`) |
+| `@luckyluu/wonder-ui/tokens.css` | Design tokens only — for theme overrides without component CSS |
+| `@luckyluu/wonder-ui/reset.css` | Optional full-page reset (`body`, margins, element defaults) |
+
+Import **either** `styles.css` explicitly (recommended for import-order control) **or** rely on the JS entry side-effect — not both.
+
+Load Wonder UI CSS **before** your global CSS if your app styles should win; **after** if Wonder UI should win.
+
+### Migrating to 0.3.0
+
+Global resets are no longer included in `styles.css` by default. If your app relied on Wonder UI zeroing margins or styling `body`, import `reset.css` explicitly or use your own reset.
 
 ## Components
 

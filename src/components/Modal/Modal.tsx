@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { WONDER_UI_SCOPE_CLASS } from '../../styles/scope';
 import styles from './Modal.module.css';
 
 export type ModalProps = {
@@ -113,7 +114,7 @@ export function Modal({
   }
 
   return createPortal(
-    <div className={styles.overlay}>
+    <div className={cx(WONDER_UI_SCOPE_CLASS, styles.overlay)}>
       <button
         type="button"
         className={styles.backdrop}

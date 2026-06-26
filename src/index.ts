@@ -64,3 +64,6 @@ export type { TextProps } from './components/Text';
 
 export { Tooltip } from './components/Tooltip';
 export type { TooltipProps, TooltipPlacement } from './components/Tooltip';
+
+export { WonderUIProvider, WONDER_UI_SCOPE_CLASS } from './components/WonderUIProvider';
+export type { WonderUIProviderProps } from './components/WonderUIProvider';

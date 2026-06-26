@@ -1,0 +1,13 @@
+.wonder-ui {
+  box-sizing: border-box;
+  font-family: var(--wonder-font-family);
+  font-size: var(--wonder-font-size-md);
+  line-height: var(--wonder-line-height-normal);
+  color: var(--wonder-color-text);
+}
+
+.wonder-ui *,
+.wonder-ui *::before,
+.wonder-ui *::after {
+  box-sizing: border-box;
+}
